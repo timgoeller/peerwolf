@@ -6,9 +6,8 @@
   "scripts": {
     "dist": "yarn run build && electron-builder",
     "postinstall": "electron-builder install-app-deps",
-    "test": "echo \"Error: no test specified\" && exit 1",
     "start:electron": "electron .",
-    "start": "cross-env NODE_ENV=development npm-run-all --sequential build start:electron",
+    "start": "cross-env NODE_ENV=development npm-run-all --parallel build start:electron",
     "build": "webpack --config webpack.config.js"
   },
   "author": "",

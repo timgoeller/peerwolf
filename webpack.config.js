@@ -4,6 +4,7 @@ const path = require('path')
 
 module.exports = {
   mode: 'production',
+  watch: process.env.NODE_ENV === 'development',
   entry: [
     './frontend/app.js'
   ],
