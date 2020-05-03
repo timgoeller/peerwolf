@@ -14,12 +14,12 @@ export default {
     gameID: ""
   },
   methods: {
-    joinGame() {
-      if(gameID !== undefined) {
-
-      }
+    joinGame: function () {
+      if(this.gameID !== undefined) {
+        this.$ipcRenderer.send('join-game', this.gameID);
+      };
     },
-    createGame() {
+    createGame: function () {
       this.$ipcRenderer.send('create-game')
     }
   }
