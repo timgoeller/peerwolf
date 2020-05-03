@@ -30,6 +30,7 @@
   },
   "dependencies": {
     "hypercore": "^8.13.2",
+    "hyperswarm": "^2.13.0",
     "vue": "^2.6.11"
   },
   "build": {
