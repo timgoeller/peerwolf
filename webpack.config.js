@@ -8,7 +8,7 @@ module.exports = {
     './frontend/app.js'
   ],
   output: {
-    path: path.join(__dirname + '/..', 'static'),
+    path: path.join(__dirname, 'static'),
   },
   module: {
     rules: [

@@ -9,7 +9,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start:electron": "electron .",
     "start": "cross-env NODE_ENV=development npm-run-all --sequential build start:electron",
-    "build": "webpack --config build/webpack.config.dev.js"
+    "build": "webpack --config webpack.config.js"
   },
   "author": "",
   "license": "ISC",
