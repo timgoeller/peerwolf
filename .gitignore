@@ -2,6 +2,7 @@
 node_modules
 /static
 /release
+/game_data
 
 # # local env files
 .env.local
