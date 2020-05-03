@@ -1,6 +1,5 @@
-const { app, BrowserWindow } = require('electron')
-const sodium = require('hypercore')
-console.log(sodium)
+const { app, BrowserWindow, ipcMain } = require('electron')
+
 function createWindow () {
   // Create the browser window.
   const win = new BrowserWindow({

@@ -1,15 +1,19 @@
 <template>
-   <div>
-    <h1>Helloos Worldd!</h1>
+  <div id='app'>
+    <start-screen></start-screen>
   </div>
 </template>
 
 <script>
-export default {
+import StartScreen from "./components/StartScreen.vue"
 
+export default {
+  components: {
+    StartScreen
+  }
 }
 </script>
 
-<style>
+<style lang="scss" scoped>
 
 </style>

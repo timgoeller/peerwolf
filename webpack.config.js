@@ -5,6 +5,7 @@ const path = require('path')
 module.exports = {
   mode: 'production',
   watch: process.env.NODE_ENV === 'development',
+  target: 'electron-renderer',
   entry: [
     './frontend/app.js'
   ],
