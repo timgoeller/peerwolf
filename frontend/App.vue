@@ -1,6 +1,7 @@
 <template>
   <div id='app'>
-    <start-screen></start-screen>
+    <start-screen v-if="!startedGame"></start-screen>
+    <main-screen v-if="startedGame"></main-screen>
   </div>
 </template>
 
@@ -8,6 +9,9 @@
 import StartScreen from "./components/StartScreen.vue"
 
 export default {
+  data: {
+    startedGame: false
+  },
   components: {
     StartScreen
   }

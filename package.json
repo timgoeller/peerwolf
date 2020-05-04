@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dist": "yarn run build && electron-builder",
+    "pack": "yarn run build && electron-builder --dir",
     "postinstall": "electron-builder install-app-deps",
     "start:electron": "electron .",
     "start": "cross-env NODE_ENV=development npm-run-all --parallel build start:electron",
@@ -29,7 +30,7 @@
     "webpack-cli": "^3.3.11"
   },
   "dependencies": {
-    "hypercore": "^8.13.2",
+    "crypto": "^1.0.1",
     "hyperswarm": "^2.13.0",
     "vue": "^2.6.11"
   },
