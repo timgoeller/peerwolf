@@ -2,35 +2,32 @@ const {ipcMain} = require('electron')
 const hyperswarm = require('hyperswarm')
 const crypto = require('crypto')
 
-module.exports = Peerwolf
+class Peerwolf {
+  constructor () {
+    this.clientID = crypto.randomBytes(32)
+    this.handleEvents()
+  }
 
-function Peerwolf () {
-  var feed
-  var clientID = crypto.randomBytes(32)
-
-  handleEvents()
-  
-  function handleEvents() {
+  handleEvents() {
+    let self = this
     ipcMain.on('create-game', (event, arg) => {
       let topic = crypto.randomBytes(32)
       console.log("TOPIC: " + topic.toString('hex'))
-      joinSwarm(topic, event)
+      self.joinSwarm(topic, event)
     })
 
     ipcMain.on('join-game', (event, arg) => {
-      joinSwarm(Buffer.from(arg, 'hex'), event)
+      self.joinSwarm(Buffer.from(arg, 'hex'), event)
     })
   }
 
-  function joinSwarm(topic, renderEvent) {
+  joinSwarm(topic, renderEvent) {
     const swarm = hyperswarm({maxPeers: 40})
 
     swarm.join(topic, {lookup: true,announce: true})
 
     swarm.on('connection', (connection, details) => {
-
       connection.on('data', (data) => {
-        //only data that can be recieved here is a client's id
         var dropped = details.deduplicate(clientID, Buffer.from(data, 'hex'))
         console.log(dropped)
         if(!dropped) {
@@ -38,9 +35,10 @@ function Peerwolf () {
         }
       });
 
-      connection.setEncoding('utf8')
+      connection.setEncoding('utf8') //would send as Buffer otherwise
       connection.write(clientID.toString('hex')); //VERY simple handshake to handle deduplication
     })
   }
 }
 
+module.exports = Peerwolf

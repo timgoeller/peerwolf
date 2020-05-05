@@ -3,6 +3,7 @@ node_modules
 /static
 /release
 /game_data
+*.tgz
 
 # # local env files
 .env.local

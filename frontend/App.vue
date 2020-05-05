@@ -14,6 +14,11 @@ export default {
   },
   components: {
     StartScreen
+  },
+  mounted: function () {
+    this.$ipcRenderer.on('new-peer', (event, data) => {
+      console.log("New connection. Initiator? " + data.details.client)
+    })
   }
 }
 </script>

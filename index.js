@@ -1,5 +1,5 @@
 const { app, BrowserWindow, ipcMain } = require('electron')
-const peerwolf = require('./backend/peerwolf')
+const Peerwolf = require('./backend/peerwolf')
 
 function createWindow () {
   // Create the browser window.
@@ -23,7 +23,7 @@ function createWindow () {
 // Some APIs can only be used after this event occurs.
 app.whenReady().then(() => {
   createWindow()
-  peerwolf()
+  let application = new Peerwolf()
 })
 
 // Quit when all windows are closed.
@@ -40,7 +40,7 @@ app.on('activate', () => {
   // dock icon is clicked and there are no other windows open.
   if (BrowserWindow.getAllWindows().length === 0) {
     createWindow()
-    peerwolf()
+    let application = new Peerwolf()
   }
 })
 
