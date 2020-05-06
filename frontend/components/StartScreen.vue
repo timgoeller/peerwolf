@@ -10,8 +10,10 @@
 <script>
 export default {
   name: 'StartScreen',
-  data: {
-    gameID: ""
+  data: function () {
+    return {
+      gameID: ""
+    }
   },
   methods: {
     joinGame: function () {
