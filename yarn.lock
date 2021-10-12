@@ -1603,10 +1603,10 @@ electron-reloader@^1.0.1:
     electron-is-dev "^1.1.0"
     find-up "^4.1.0"
 
-electron@7.2.3:
-  version "7.2.3"
-  resolved "https://registry.yarnpkg.com/electron/-/electron-7.2.3.tgz#d69d0984fdfa3f0deeeb1d698bf63dc52e1d2d1d"
-  integrity sha512-DqPjMLyNYROsvVCIZH84aWYs4AG9p2dlYhwLhyrtOJVXLbibzy0YXP2IPHMCC9GV2j2Z2hA9vR+frYHwpOsaDg==
+electron@11.5.0:
+  version "11.5.0"
+  resolved "https://registry.yarnpkg.com/electron/-/electron-11.5.0.tgz#f1650543b9d8f2047d3807755bdb120153ed210f"
+  integrity sha512-WjNDd6lGpxyiNjE3LhnFCAk/D9GIj1rU3GSDealVShhkkkPR3Vh4q8ErXGDl1OAO/faomVa10KoFPUN/pLbNxg==
   dependencies:
     "@electron/get" "^1.0.1"
     "@types/node" "^12.0.12"
